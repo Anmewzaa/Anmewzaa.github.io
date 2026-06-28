@@ -468,6 +468,42 @@ a:focus {
   color: #f1db25;
 }
 
+.experience_section .job-box {
+  background-color: #ffffff;
+  padding: 35px 30px;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+}
+
+.experience_section .job-box h4 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.experience_section .job-box h4 span {
+  font-weight: 400;
+  color: #555;
+  font-size: 16px;
+}
+
+.experience_section .job-box .job-meta {
+  color: #f1db25;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.experience_section .job-box ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.experience_section .job-box ul li {
+  margin-bottom: 8px;
+}
+
 .service_section {
   background-color: #1c1c1c;
 }
@@ -483,6 +519,11 @@ a:focus {
   -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
   margin-top: 45px;
+}
+
+.service_section .box .img-box img {
+  width: 75px;
+  height: auto;
 }
 
 .service_section .box .img-box svg {
@@ -611,6 +652,92 @@ a:focus {
 .client_section .carousel-control-next {
   left: initial;
   right: 0;
+}
+
+.client_section ol.carousel-indicators {
+  margin-bottom: -45px;
+}
+
+.client_section ol.carousel-indicators li {
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background-color: #f1db25;
+  opacity: 1;
+  border: none;
+  margin: 0 4px;
+}
+
+.client_section ol.carousel-indicators li.active {
+  background-color: #1c1c1c;
+}
+
+.credentials_section {
+  background-color: #f7f7f7;
+}
+
+.credentials_section .cred-box {
+  background-color: #ffffff;
+  padding: 25px 20px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  margin-top: 30px;
+  height: 100%;
+}
+
+.credentials_section .cred-box h6 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.credentials_section .cred-box p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.credentials_section .pub-activity-list {
+  margin-top: 45px;
+}
+
+.credentials_section .pub-activity-list h5 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.credentials_section .pub-activity-list h5::before {
+  content: "";
+  width: 30px;
+  height: 5px;
+  background-color: #f1db25;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.credentials_section .pub-activity-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.credentials_section .pub-activity-list ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.credentials_section .pub-activity-list ul li a {
+  color: #1c1c1c;
+  font-weight: 600;
+}
+
+.credentials_section .pub-activity-list ul li a:hover {
+  color: #f1db25;
 }
 
 /* contact section */
