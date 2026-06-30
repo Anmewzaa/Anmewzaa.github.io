@@ -5,6 +5,7 @@ export const RESOURCE_TYPES = {
     color: '#0078D4',
     category: 'Foundation',
     tfType: 'azurerm_resource_group',
+    isContainer: true,
     defaultData: { name: 'my-rg', location: 'East US' },
     fields: [
       { key: 'name', label: 'Name', type: 'text' },
@@ -17,6 +18,7 @@ export const RESOURCE_TYPES = {
     color: '#7C3AED',
     category: 'Networking',
     tfType: 'azurerm_virtual_network',
+    isContainer: true,
     defaultData: { name: 'my-vnet', location: 'East US', addressSpace: '10.0.0.0/16' },
     fields: [
       { key: 'name', label: 'Name', type: 'text' },

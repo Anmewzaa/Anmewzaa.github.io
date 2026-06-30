@@ -16,10 +16,29 @@ import Sidebar from '../components/Sidebar'
 import ConfigPanel from '../components/ConfigPanel'
 import TerraformOutput from '../components/TerraformOutput'
 import AzureNode from '../components/nodes/AzureNode'
+import ContainerNode from '../components/nodes/ContainerNode'
 import { RESOURCE_TYPES } from '../utils/resourceTypes'
 import styles from './BuilderPage.module.css'
 
-const nodeTypes = { azureNode: AzureNode }
+const nodeTypes = { azureNode: AzureNode, containerNode: ContainerNode }
+
+function findContainerAt(nodes, position) {
+  for (let i = nodes.length - 1; i >= 0; i--) {
+    const n = nodes[i]
+    if (n.type !== 'containerNode') continue
+    const w = n.measured?.width ?? n.style?.width ?? 320
+    const h = n.measured?.height ?? n.style?.height ?? 200
+    if (
+      position.x >= n.position.x &&
+      position.x <= n.position.x + w &&
+      position.y >= n.position.y &&
+      position.y <= n.position.y + h
+    ) {
+      return n
+    }
+  }
+  return null
+}
 
 let nodeIdCounter = 1
 
@@ -55,14 +74,30 @@ function BuilderInner() {
       })
 
       const id = `node_${nodeIdCounter++}`
+      const isContainer = !!rt.isContainer
+
       const newNode = {
         id,
-        type: 'azureNode',
+        type: isContainer ? 'containerNode' : 'azureNode',
         position,
         data: { type, name: `${rt.label.toLowerCase().replace(/\s+/g, '-')}-${nodeIdCounter}`, ...rt.defaultData },
+        ...(isContainer ? { style: { width: 320, height: 200 }, zIndex: -1 } : {}),
       }
 
-      setNodes((nds) => nds.concat(newNode))
+      setNodes((nds) => {
+        if (!isContainer) {
+          const parent = findContainerAt(nds, position)
+          if (parent) {
+            newNode.parentId = parent.id
+            newNode.extent = 'parent'
+            newNode.position = {
+              x: position.x - parent.position.x,
+              y: position.y - parent.position.y,
+            }
+          }
+        }
+        return nds.concat(newNode)
+      })
     },
     [rfInstance, setNodes]
   )
