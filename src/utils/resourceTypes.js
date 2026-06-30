@@ -1,0 +1,108 @@
+export const RESOURCE_TYPES = {
+  ResourceGroup: {
+    label: 'Resource Group',
+    icon: '📦',
+    color: '#0078D4',
+    category: 'Foundation',
+    tfType: 'azurerm_resource_group',
+    defaultData: { name: 'my-rg', location: 'East US' },
+    fields: [
+      { key: 'name', label: 'Name', type: 'text' },
+      { key: 'location', label: 'Location', type: 'select', options: ['East US','East US 2','West US','West US 2','West Europe','North Europe','Southeast Asia','Australia East'] },
+    ],
+  },
+  VNet: {
+    label: 'Virtual Network',
+    icon: '🌐',
+    color: '#7C3AED',
+    category: 'Networking',
+    tfType: 'azurerm_virtual_network',
+    defaultData: { name: 'my-vnet', location: 'East US', addressSpace: '10.0.0.0/16' },
+    fields: [
+      { key: 'name', label: 'Name', type: 'text' },
+      { key: 'location', label: 'Location', type: 'select', options: ['East US','East US 2','West US','West US 2','West Europe','North Europe','Southeast Asia','Australia East'] },
+      { key: 'addressSpace', label: 'Address Space', type: 'text' },
+    ],
+  },
+  Subnet: {
+    label: 'Subnet',
+    icon: '🔲',
+    color: '#8B5CF6',
+    category: 'Networking',
+    tfType: 'azurerm_subnet',
+    defaultData: { name: 'my-subnet', addressPrefix: '10.0.1.0/24' },
+    fields: [
+      { key: 'name', label: 'Name', type: 'text' },
+      { key: 'addressPrefix', label: 'Address Prefix', type: 'text' },
+    ],
+  },
+  NSG: {
+    label: 'Network Security Group',
+    icon: '🛡️',
+    color: '#DC2626',
+    category: 'Networking',
+    tfType: 'azurerm_network_security_group',
+    defaultData: { name: 'my-nsg', location: 'East US' },
+    fields: [
+      { key: 'name', label: 'Name', type: 'text' },
+      { key: 'location', label: 'Location', type: 'select', options: ['East US','East US 2','West US','West US 2','West Europe','North Europe','Southeast Asia','Australia East'] },
+    ],
+  },
+  PublicIP: {
+    label: 'Public IP',
+    icon: '🌍',
+    color: '#0891B2',
+    category: 'Networking',
+    tfType: 'azurerm_public_ip',
+    defaultData: { name: 'my-pip', location: 'East US', allocationMethod: 'Static' },
+    fields: [
+      { key: 'name', label: 'Name', type: 'text' },
+      { key: 'location', label: 'Location', type: 'select', options: ['East US','East US 2','West US','West US 2','West Europe','North Europe','Southeast Asia','Australia East'] },
+      { key: 'allocationMethod', label: 'Allocation', type: 'select', options: ['Static','Dynamic'] },
+    ],
+  },
+  NIC: {
+    label: 'Network Interface',
+    icon: '🔌',
+    color: '#059669',
+    category: 'Networking',
+    tfType: 'azurerm_network_interface',
+    defaultData: { name: 'my-nic', location: 'East US', privateIpAllocation: 'Dynamic' },
+    fields: [
+      { key: 'name', label: 'Name', type: 'text' },
+      { key: 'location', label: 'Location', type: 'select', options: ['East US','East US 2','West US','West US 2','West Europe','North Europe','Southeast Asia','Australia East'] },
+      { key: 'privateIpAllocation', label: 'Private IP Allocation', type: 'select', options: ['Dynamic','Static'] },
+    ],
+  },
+  VM: {
+    label: 'Virtual Machine',
+    icon: '💻',
+    color: '#10B981',
+    category: 'Compute',
+    tfType: 'azurerm_linux_virtual_machine',
+    defaultData: { name: 'my-vm', location: 'East US', size: 'Standard_B1s', adminUsername: 'azureuser', osImage: 'Ubuntu 22.04 LTS' },
+    fields: [
+      { key: 'name', label: 'Name', type: 'text' },
+      { key: 'location', label: 'Location', type: 'select', options: ['East US','East US 2','West US','West US 2','West Europe','North Europe','Southeast Asia','Australia East'] },
+      { key: 'size', label: 'VM Size', type: 'select', options: ['Standard_B1s','Standard_B2s','Standard_D2s_v3','Standard_D4s_v3','Standard_E2s_v3','Standard_F2s_v2'] },
+      { key: 'adminUsername', label: 'Admin Username', type: 'text' },
+      { key: 'osImage', label: 'OS Image', type: 'select', options: ['Ubuntu 22.04 LTS','Ubuntu 20.04 LTS','CentOS 7','Debian 11','RHEL 8'] },
+    ],
+  },
+  StorageAccount: {
+    label: 'Storage Account',
+    icon: '🗄️',
+    color: '#F59E0B',
+    category: 'Storage',
+    tfType: 'azurerm_storage_account',
+    defaultData: { name: 'mystorageacct', location: 'East US', accountTier: 'Standard', replicationType: 'LRS' },
+    fields: [
+      { key: 'name', label: 'Name', type: 'text' },
+      { key: 'location', label: 'Location', type: 'select', options: ['East US','East US 2','West US','West US 2','West Europe','North Europe','Southeast Asia','Australia East'] },
+      { key: 'accountTier', label: 'Account Tier', type: 'select', options: ['Standard','Premium'] },
+      { key: 'replicationType', label: 'Replication', type: 'select', options: ['LRS','GRS','RAGRS','ZRS'] },
+    ],
+  },
+}
+
+export const CATEGORIES = ['Foundation', 'Networking', 'Compute', 'Storage']

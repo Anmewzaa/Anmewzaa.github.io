@@ -1,0 +1,26 @@
+{
+  "name": "mewstella",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://Anmewzaa.github.io",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -b gh-pages -r https://github.com/Anmewzaa/Anmewzaa.github.io.git"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.3",
+    "@xyflow/react": "^12.11.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.1"
+  }
+}

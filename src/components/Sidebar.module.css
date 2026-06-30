@@ -1,0 +1,79 @@
+.sidebar {
+  width: 200px;
+  min-width: 200px;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.header {
+  padding: 14px 12px 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+
+.group {
+  padding: 4px 0;
+}
+
+.groupLabel {
+  padding: 10px 12px 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  cursor: grab;
+  border-radius: 0;
+  border-left: 2px solid transparent;
+  transition: background 0.1s, border-color 0.1s;
+  user-select: none;
+}
+
+.item:hover {
+  background: rgba(255,255,255,0.04);
+  border-left-color: var(--item-color, var(--purple));
+}
+
+.item:active {
+  cursor: grabbing;
+}
+
+.itemIcon {
+  font-size: 14px;
+  width: 20px;
+  text-align: center;
+}
+
+.itemLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.item:hover .itemLabel {
+  color: var(--text);
+}
+
+.hint {
+  margin-top: auto;
+  padding: 12px;
+  font-size: 10px;
+  color: var(--text-muted);
+  opacity: 0.5;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
